@@ -2,7 +2,7 @@ let maxNumber;
 
 // Ask the user to enter the max number until a valid number is provided
 while (true) {
-    maxNumer = prompt("Enter a max number");
+    maxNumber = prompt("Enter a max number:");
 
     if (!isNaN(maxNumber) && maxNumber > 1) {
         maxNumber = Number(maxNumber);
@@ -13,7 +13,7 @@ while (true) {
 }
 
 // Generate a random number between 1 and maxNumber
-const targetNumber = Math.floor(math.random() * (maxNumber - 1)) + 1;
+const targetNumber = Math.floor(Math.random() * (maxNumber - 1)) + 1;
 
 let attempts = 0;
 
@@ -28,13 +28,15 @@ while (true) {
         const guessedNumber = parseInt(guess);
 
         // Check if the guessed number is correct
-        if (guessedNumber === targetNumber){
+        if (guessedNumber === targetNumber) {
             alert(`Congratulations! You guessed the number in ${attempts} attempts.`);
             break;
         } else if (guessedNumber < targetNumber) {
             alert("Incorrect guess. The number is higher.");
         } else {
-            alert("Please enter a valid number.");
+            alert("Incorrect guess. The number is lower.");
         }
+    } else {
+        alert("Please enter a valid number.");
     }
 }
